@@ -19,8 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 // @RequestMapping(): HTTP 요청에 클래스와 메서드를 매핑하기 위한 어노테이션
 // @RequestMapping(value="/main", method = {RequestMethod.GET})
-@RequestMapping("/main")
+
 // HTTP GET localhost:4000/main/**
+@RequestMapping("/main")
 public class BasicController {
     
     // HTTP GET localhost:4000/main/
@@ -69,8 +70,8 @@ public class BasicController {
     }
 
     // Method + URL Pattern이 중복되면 런타임 중에 에러가 발생
-    @DeleteMapping("/apple")
-    public String deleteApple1() {
-        return "Delete Mapping으로 만든 메서드";
-    }
+    // @DeleteMapping("/apple")
+    // public String deleteApple1() {
+    //     return "Delete Mapping으로 만든 메서드";
+    // }
 }
