@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.young.basic.dto.SampleDto;
 
+import jakarta.validation.Valid;
+
 @RestController
 //HTTP * localhost:4000/request-data/**
 @RequestMapping("/request-data")
@@ -80,7 +82,8 @@ public class ReqeustDataController {
     @PostMapping("/post")
     public String post(
         // @RequestBody String text
-        @RequestBody SampleDto dto
+        // @Valid : 해당 payload에 대해서 유효성 검사를 실시하도록 함
+        @RequestBody @Valid SampleDto dto
     ) {
         return "전송한 데이터 : " + dto.toString();
     }
