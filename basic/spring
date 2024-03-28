@@ -13,3 +13,18 @@ spring init
     -> validation을 사용해서 유효성 검사 시에 유효하지 않으면 spring boot가 자동으로 response body를 생성해서 응답
         --> ExceptionHandler 클래스로 validation 관련 예외 직접 처리 (@RestControllerAdvice, @ExceptionHandler)
     -> 각 HTTP 응답을 직접 제어하기 위해 ResponseEntity 클래스 사용 (status code, body, header .. 제어)
+
+
+
+    UPDATE student SET address = dto.adress WHERE StudentNumber = dto.StudentNumber
+
+    1. student 테이블로 접근
+    2. dto.StudentNumber에 해당하는 레코드를 검색
+    3. 검색된 레코드의 address 값을 dto.address로 변경
+
+    ----- 객체지향 프로그래밍언어의  클래스  == RDBMS의 테이블 -----
+    ----- 객체지향 프로그래밍언어의 인스턴스 == RDBMS의 레코드 -----
+
+    1. student 클래스로 접근
+    2. dto.StudentNumber에 해당하는 인스턴스를 검색
+    3. 검색된 인스턴스의 address 값을 dto.address로 변경
