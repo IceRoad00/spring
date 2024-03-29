@@ -28,3 +28,10 @@ spring init
     1. student 클래스로 접근
     2. dto.StudentNumber에 해당하는 인스턴스를 검색
     3. 검색된 인스턴스의 address 값을 dto.address로 변경
+
+    
+    CRUD
+    CREATE : 1 ~ 2
+    READ : 엄청 많음
+    UPDATE : 1 ~ 컬럼 개수
+    DELETE : 1 ~ 2
