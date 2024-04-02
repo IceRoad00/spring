@@ -1,5 +1,8 @@
 package com.example.board.service;
 
-public class UserService {
-    
+import com.example.board.dto.response.user.GetUserResponseDto;
+import org.springframework.http.ResponseEntity;
+
+public interface UserService {
+    ResponseEntity<? super GetUserResponseDto> getUser(String email);
 }

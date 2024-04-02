@@ -1,5 +1,10 @@
 package com.example.board.service;
 
-public class BoardService {
+import com.example.board.dto.response.board.GetLatestListResponseDto;
+
+import org.springframework.http.ResponseEntity;
+
+public interface BoardService {
+    ResponseEntity<? super GetLatestListResponseDto> getLatestList();
     
 }

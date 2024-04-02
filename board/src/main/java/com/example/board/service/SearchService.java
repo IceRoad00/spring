@@ -1,5 +1,5 @@
 package com.example.board.service;
 
-public class SearchService {
+public interface SearchService {
     
 }
