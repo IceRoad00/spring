@@ -18,7 +18,7 @@ public class UserEntity {
     private String email;
     private String password;
     private String nickname;
-    private String tellNumber;
+    private String telNumber;
     private String address;
     private String addressDetail;
     private String profileImageUrl;

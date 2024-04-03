@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.example.board.entity.SearchLogEntity;
 
 @Repository
-public interface SearchLogRepository extends JpaRepository<SearchLogEntity, String>{
+public interface SearchLogRepository extends JpaRepository<SearchLogEntity, Integer>{
     
 }

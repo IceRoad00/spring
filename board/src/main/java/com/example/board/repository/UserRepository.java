@@ -8,4 +8,6 @@ import com.example.board.entity.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, String> {
     
+    // UserEntity로 반환
+    UserEntity findByEmail(String email);
 }

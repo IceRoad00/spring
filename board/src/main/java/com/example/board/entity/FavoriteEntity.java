@@ -19,8 +19,7 @@ import lombok.Setter;
 @IdClass(FavoritePk.class)
 public class FavoriteEntity {
     @Id
-    private String userEmail;
+    private Integer boardNumber;
     @Id
-    private Integer boardBoardNumber;
-
+    private String userEmail;
 }

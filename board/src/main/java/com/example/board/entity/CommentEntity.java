@@ -13,7 +13,7 @@ import lombok.Setter;
 
 @Entity(name = "comment")
 @Table(name = "commnet")
-public class CommnetEntity {
+public class CommentEntity {
     @Id
     private String commentNumber;
     private String contents;
