@@ -22,9 +22,9 @@ public class AuthController {
     
     @PostMapping("/sign-up")
     public ResponseEntity<ResponseDto> signUp(
-        @RequestBody @Valid SignUpRequestDto requestbody
+        @RequestBody @Valid SignUpRequestDto requestBody
     ) {
-        ResponseEntity<ResponseDto> response = authService.signUp(requestbody);
+        ResponseEntity<ResponseDto> response = authService.signUp(requestBody);
         return response;
 }
 }

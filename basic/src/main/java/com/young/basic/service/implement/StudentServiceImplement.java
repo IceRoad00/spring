@@ -42,8 +42,8 @@ public class StudentServiceImplement implements StudentService{
         String address = dto.getAddress();
 
         // 0. student 테이블에 해당하는 Primary key를 가지는 레코드가 존재하는지 확인
-        boolean isExiestedStudent = studentRepository.existsById(studentNumber);
-        if(!isExiestedStudent) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("존재하지 않는 학생입니다.");
+        boolean isExistedStudent = studentRepository.existsById(studentNumber);
+        if(!isExistedStudent) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("존재하지 않는 학생입니다.");
 
         // 1. student 클래스로 접근 (StudentRepository 사용)
         StudentEntity studentEntity = studentRepository.

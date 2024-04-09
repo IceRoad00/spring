@@ -12,6 +12,11 @@ public class ResponseDto {
     private String code;
     private String message;
 
+    public static ResponseEntity<ResponseDto> success() {
+        ResponseDto body = new ResponseDto(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
+        return ResponseEntity.status(HttpStatus.OK).body(body);
+    }
+
     public static ResponseEntity<ResponseDto> databaseError() {
         ResponseDto body = new ResponseDto(ResponseCode.DATABASE_ERROR, ResponseMessage.DATABASE_ERROR);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
