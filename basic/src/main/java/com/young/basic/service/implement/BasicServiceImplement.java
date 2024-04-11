@@ -2,7 +2,10 @@ package com.young.basic.service.implement;
 
 import org.springframework.stereotype.Service;
 
+import com.young.basic.provider.JwtProvider;
 import com.young.basic.service.BasicService;
+
+import lombok.RequiredArgsConstructor;
 
 /* 
     Service 레이어 :
@@ -17,15 +20,24 @@ import com.young.basic.service.BasicService;
 // Spring Bean : 제어의 역전을 통해서 의존성 주입 시 
 //                  해당 클래스의 인스턴스를 Spring Framework가 제어하는 요소
 @Service
+@RequiredArgsConstructor
 public class BasicServiceImplement implements BasicService{
+
+    private final JwtProvider jwtProvider;
 
     @Override
     public String getHello() {
         return "Hello Springboot!!";
     }
 
+    @Override
     public String getApple() {
         return "Get Mappping 으로 만든 메서드";
+    }
+
+    @Override
+    public String getJwt(String principle) {
+        return jwtProvider.create(principle);
     }
 
 

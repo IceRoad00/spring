@@ -44,7 +44,7 @@ Entity : RDBMS의 테이블과 매핑되는 클래스
 public class StudentEntity {
 /*
 @Id :
-- Entity의 필드 중  Primary key로 사용되는 필드를 지정
+- Entity의 필드 중 Primary key로 사용되는 필드를 지정
 */
 @Id
 /*
@@ -68,7 +68,7 @@ public class StudentEntity {
 */
 @Column(name = "student_number", nullable = false, unique = true, insertable = false, updatable = false, length = 10)
     private Integer studentNumber;
-
+    
     private String name; 
     private Integer age;
     private String address;
