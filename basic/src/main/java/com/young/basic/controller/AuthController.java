@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.young.basic.service.BasicService;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/auth")
@@ -22,5 +25,13 @@ public class AuthController {
     ) {
         return basicService.getJwt(principle);
     }
+
+    @PostMapping("/validation")
+    public String jwtvalidate(
+        @RequestBody String jwt
+    ) {
+        return basicService.jwtValidate(jwt);
+    }
+    
     
 }

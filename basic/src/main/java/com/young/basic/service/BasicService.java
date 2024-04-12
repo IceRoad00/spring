@@ -9,5 +9,6 @@ public interface BasicService {
     String getApple();
 
     String getJwt(String principle);
+    String jwtValidate(String jwt);
 
 }
