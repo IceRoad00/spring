@@ -1,0 +1,60 @@
+plugins {
+	id 'java'
+	id 'war'
+	id 'org.springframework.boot' version '3.1.9'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.young'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	// 객체 유효성 검사를 위해 사용하는 spring boot 유효성 검사 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// RDBMS와 JAVA의 객체간 매핑을 위한 ORM 기술인 JPA 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	
+	// Java 기반의 보안 솔루션 프레임워크인 Spring Security 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// Spring boot에서 OAuth2.0 인증을 사용할 수 있도록 하는 하는 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	// MySQL 연결을 위한 connector 의존성
+	runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
+
+	// Jwt 생성 및 검증을 위한 의존성
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('bootBuildImage') {
+	builder = 'paketobuildpacks/builder-jammy-base:latest'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
