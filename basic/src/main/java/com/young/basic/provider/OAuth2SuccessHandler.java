@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.stereotype.Component;
 
 import com.young.basic.entity.CustomOAuth2User;
 
@@ -15,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 // OAuth2에 대한 모든 처리과정이 성공적으로 끝이 났을 때 수행하는 메서드를 생성하기 위한 클래스
 // - 반드시 SimpleUrlAuthenticationSuccessHandler 클래스 확장해야함
 @RequiredArgsConstructor
+@Component
 public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
 
     private final JwtProvider jwtProvider;

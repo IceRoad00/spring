@@ -3,7 +3,6 @@ package com.young.basic.exceptionHandler;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 // @RestControllerAdvice : RestController에서 발생하는 특정 상황들에 대해 처리하는 클래스 지정
